@@ -1,4 +1,4 @@
-class DrawingRectangle extends PaintFunction {
+class DrawingCircle extends PaintFunction {
     constructor(contextReal, contextDraft) {
       super();
       this.contextReal = contextReal;
