@@ -40,3 +40,13 @@ canvas {
   border-radius: 50px;
   border: 2px solid white;
 }
+
+#drawing-triangle {
+  background-color: blueviolet;
+}
+
+#color-picker {
+  padding: 1rem;
+  width: 100px;
+  height:60px;
+}
