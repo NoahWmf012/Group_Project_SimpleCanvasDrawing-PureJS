@@ -1,37 +1,37 @@
-class DrawingLine extends PaintFunction {
-    constructor(contextReal, contextDraft) {
-      super();
-      this.contextReal = contextReal;
-      this.contextDraft = contextDraft;
-    }
+let userInputSize = 6;
 
-    onMouseDown(coord, event) {
-        this.contextReal.fillStyle = "cornflowerblue";
-        this.origX = coord[0];
-        this.origY = coord[1];
-      }
-      onDragging(coord, event) {
-        this.contextDraft.fillStyle = "cornflowerblue";
-        this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-        this.contextDraft.arc(
-          this.origX,
-          this.origY,
-          radius,
-          startAngle,
-          endAngle
-          
-        );
-      }
-      onMouseMove() {}
-      onMouseUp(coord) {
-        this.contextDraft.clearRect(0, 0, 2* Math.PI);
-        this.contextReal.fillRect(
-          this.origX,
-          this.origY,
-          coord[0] - this.origX,
-          coord[1] - this.origY
-        );
-      }
-      onMouseLeave() {}
-      onMouseEnter() {}
-    }
+$("#stroke-size").on("change", function (e) {
+  userInputSize = e.target.value;
+  console.log(userInputSize);
+});
+
+class DrawingLine extends PaintFunction {
+  constructor(contextReal, strokeSize) {
+    super();
+    console.log(this.color);
+    this.contextReal = contextReal;
+    this.strokeSize = strokeSize;
+  }
+
+  onMouseDown(coord, event) {
+    this.contextReal.strokeStyle = this.color;
+    this.contextReal.lineJoin = "round";
+    this.contextReal.beginPath();
+    this.contextReal.moveTo(coord[0], coord[1]);
+    this.draw(coord[0], coord[1], userInputSize);
+  }
+  onDragging(coord, event) {
+    this.draw(coord[0], coord[1]);
+  }
+  onMouseMove() {}
+  onMouseUp() {}
+  onMouseLeave() {}
+  onMouseEnter() {}
+  draw(x, y, strokeSize) {
+    this.contextReal.lineTo(x, y);
+    this.contextReal.moveTo(x, y);
+    this.contextReal.closePath();
+    this.contextReal.stroke();
+    this.contextReal.lineWidth = strokeSize;
+  }
+}
