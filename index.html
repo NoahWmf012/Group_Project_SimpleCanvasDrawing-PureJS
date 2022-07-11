@@ -1,15 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-<script src="./canvas/drawing-circle.js"></script> 
-<script src="./canvas/drawing-line.js"></script> 
-<script src="./canvas/drawing-rectangle.js"></script>     
-<script src="./canvas/canvas-common.js"></script> 
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Canvas Project #2</title>
+  </head>
+  <body>
+    <h1 class="text-center">Canvas Project</h1>
+    
+    <button class="btn btn-primary" id="drawing-rectangle">Drawing Rectangle</button>
+    <button class="btn btn-warning" id="drawing-circle">Drawing Circle</button>
+    <button class="btn btn-success" id="drawing-line">Drawing Line</button>
+    <button class="btn btn-success" id="drawing-line">undo </button>
+    <button class="btn btn-success" id="drawing-line">clear</button>
+    
+
+    <input type="color" id="color-picker" value="" />
+    <input type="range" min="1" max="30" value="6" id="stroke-size" />
+
+    <div id="container">
+      <canvas
+        class="canvas"
+        id="canvas-real"
+        width="600px"
+        height="500px"
+      ></canvas>
+      <canvas
+        class="canvas"
+        id="canvas-draft"
+        width="600px"
+        height="500px"
+      ></canvas>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./canvas-common.js"></script>
+    <script src="./drawing-circle.js"></script>
+    <script src="./drawing-line.js"></script>
+    <script src="./drawing-rectangle.js"></script>
+    <script type="text/javascript">
+      let drawCanvas =  document.getElementById('canvas-real')
+
+      $("#drawing-rectangle").click(function () {
+        currentFunction = new DrawingRectangle(contextReal, contextDraft);
+      });
+      $("#drawing-line").click(function () {
+        currentFunction = new DrawingLine(contextReal);
+      });
+      $("#drawing-circle").click(function () {
+        currentFunction = new DrawingCircle(contextReal, contextDraft);
+      });
+    </script>
+  </body>
 </html>
+
+
+
+<!-- 1. set input vale, name of input 
+2. In Js get stoke-size value 
+3.  -->
