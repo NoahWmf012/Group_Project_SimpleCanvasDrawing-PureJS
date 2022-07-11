@@ -1,35 +1,12 @@
-body {
-  /* background-color: black; */
-  /* color: white; */
-}
-.canvas {
-  border: 2px solid black;
-}
-canvas {
-  position: absolute;
-  /* background-color: rgb(197, 193, 193); */
+body{
+    flex-direction: column;
+    height: 100vh;
 }
 
-#container {
-  margin-top: 5rem;
-  display: flex;
-  justify-content: center;
-}
-
-.tools {
-  display: flex;
-  justify-content: center;
-}
-
-.color-field {
-  height: 40px;
-  width: 40px;
-  min-width: 40px;
-  min-width: 40px;
-  cursor: pointer;
-  display: inline-block;
-  cursor: pointer;
-  box-sizing: border-box;
-  border-radius: 50px;
-  border: 2px solid white;
+#display-image{
+    width: 375px;
+    height: 211px;
+    border: 1px solid #000;
+    background-position: center;
+    background-size: cover;
 }
