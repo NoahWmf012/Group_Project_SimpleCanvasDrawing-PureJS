@@ -16,13 +16,19 @@ class DrawingCircle extends PaintFunction {
     this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
     this.contextDraft.beginPath();
     this.contextDraft.lineWidth = 5;
+
+    this.deltaX = this.origX - coord[0];
+    this.deltaY = this.origY - coord[1];
+    this.radius = Math.sqrt(
+      this.deltaX * this.deltaX + this.deltaY * this.deltaY
+    );
     // this.contextDraft.fillRect(
     // this.origX,
     // this.origY,
     // coord[0] - this.origX,
     // coord[1] - this.origY
     // );
-    this.contextDraft.arc(coord[0], coord[1], 100, 0, 2 * Math.PI);
+    this.contextDraft.arc(this.origX, this.origY, this.radius, 0, 2 * Math.PI);
     this.contextDraft.stroke();
     console.log("circle", this.contextDraft);
   }
@@ -32,7 +38,9 @@ class DrawingCircle extends PaintFunction {
     this.contextReal.beginPath();
     this.contextReal.fillStyle = "cornflowerblue";
     this.contextReal.lineWidth = 5;
-    this.contextReal.arc(coord[0], coord[1], 100, 0, 2 * Math.PI);
+    this.contextReal.arc(this.origX, this.origY, this.radius, 0, 2 * Math.PI);
+    this.contextReal.stroke();
+    this.contextReal.fill();
     console.log("circle real", this.contextReal);
   }
   onMouseLeave() {}

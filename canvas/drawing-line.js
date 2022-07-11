@@ -1,14 +1,14 @@
 let userInputSize = 6;
 
-$("#stroke-size").on("change", function (e) {
-  userInputSize = e.target.value;
-  console.log(userInputSize);
+$("#stroke-size").on('change',function(e) {
+  userInputSize = e.target.value
+  console.log(userInputSize)
 });
 
 class DrawingLine extends PaintFunction {
   constructor(contextReal, strokeSize) {
     super();
-    console.log(this.color);
+    console.log(this.color)
     this.contextReal = contextReal;
     this.strokeSize = strokeSize;
   }
@@ -21,7 +21,7 @@ class DrawingLine extends PaintFunction {
     this.draw(coord[0], coord[1], userInputSize);
   }
   onDragging(coord, event) {
-    this.draw(coord[0], coord[1]);
+    this.draw(coord[0], coord[1], );
   }
   onMouseMove() {}
   onMouseUp() {}
@@ -32,6 +32,9 @@ class DrawingLine extends PaintFunction {
     this.contextReal.moveTo(x, y);
     this.contextReal.closePath();
     this.contextReal.stroke();
-    this.contextReal.lineWidth = strokeSize;
+    this.contextReal.lineWidth = strokeSize
   }
 }
+
+
+//
