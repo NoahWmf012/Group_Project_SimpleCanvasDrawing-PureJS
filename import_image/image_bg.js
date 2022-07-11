@@ -4,7 +4,7 @@ img_input.addEventListener("change", function () {
   const reader = new FileReader();
   reader.addEventListener("load", () => {
     const uploaded_image = reader.result;
-    var imageSrc = document.getElementById("display-image");
+    var imageSrc = document.getElementById("canvas-real");
     imageSrc.style.backgroundImage = `url(${uploaded_image})`;
 
     var img = new Image();
