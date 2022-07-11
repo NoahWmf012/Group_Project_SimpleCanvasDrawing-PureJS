@@ -28,6 +28,7 @@ class DrawingRectangle extends PaintFunction {
       coord[0] - this.origX,
       coord[1] - this.origY
     );
+    this.contextReal.fillStyle = this.color;
   }
   onMouseLeave() {}
   onMouseEnter() {}
