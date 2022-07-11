@@ -4,6 +4,12 @@ let canvasDraft = document.getElementById("canvas-draft");
 let contextDraft = canvasDraft.getContext("2d");
 let currentFunction;
 let dragging = false;
+let colorPicked;
+
+$("#color-picker").on("change", function (e) {
+  // userInputSize = e.target.value
+  colorPicked = e.target.value;
+});
 
 $("#canvas-draft").mousedown(function (e) {
   let mouseX = e.offsetX;
@@ -18,31 +24,41 @@ $("#canvas-draft").mousemove(function (e) {
   if (dragging) {
     currentFunction.onDragging([mouseX, mouseY], e);
   }
-  currentFunction.onMouseMove([mouseX, mouseY], e);
+  if (currentFunction) {
+    currentFunction.onMouseMove([mouseX, mouseY], e);
+  }
 });
 
 $("#canvas-draft").mouseup(function (e) {
   dragging = false;
   let mouseX = e.offsetX;
   let mouseY = e.offsetY;
-  currentFunction.onMouseUp([mouseX, mouseY], e);
+  if (currentFunction) {
+    currentFunction.onMouseUp([mouseX, mouseY], e);
+  }
 });
 
 $("#canvas-draft").mouseleave(function (e) {
   dragging = false;
   let mouseX = e.offsetX;
   let mouseY = e.offsetY;
-  currentFunction.onMouseLeave([mouseX, mouseY], e);
+  if (currentFunction) {
+    currentFunction.onMouseLeave([mouseX, mouseY], e);
+  }
 });
 
 $("#canvas-draft").mouseenter(function (e) {
   let mouseX = e.offsetX;
   let mouseY = e.offsetY;
-  currentFunction.onMouseEnter([mouseX, mouseY], e);
+  if (currentFunction) {
+    currentFunction.onMouseEnter([mouseX, mouseY], e);
+  }
 });
 
 class PaintFunction {
-  constructor() {}
+  constructor() {
+    this.color = colorPicked;
+  }
   onMouseDown() {}
   onDragging() {}
   onMouseMove() {}
