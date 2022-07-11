@@ -11,6 +11,9 @@ $("#color-picker").on('change',function(e) {
   colorPicked = e.target.value
 });
 
+// document.getElementById('#undo').addEventListener('click', function() {
+//   contextReal.clearRect(0, 0, canvas.width, canvas.height);
+// }, false);
 
 $("#canvas-draft").mousedown(function (e) {
   let mouseX = e.offsetX;
