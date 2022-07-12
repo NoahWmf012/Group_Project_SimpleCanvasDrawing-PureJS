@@ -29,6 +29,7 @@
 
     <input type="color" id="color-picker" value="" />
     <input type="range" min="1" max="30" value="6" id="stroke-size" />
+
     <!-- Import Image by Chris -->
     <input
       type="file"
@@ -38,22 +39,25 @@
     <button class="btn btn-info" id="btn-redraw">Click Here to Start!</button>
 
     <div id="container">
-      <canvas
-        class="canvas"
-        id="canvas-real"
-        width="500px"
-        height="600px"
-      ></canvas>
+      <canvas class="canvas" id="canvas-real" width="0px" height="0px"></canvas>
+
       <canvas
         class="canvas"
         id="canvas-draft"
-        width="500px"
-        height="600px"
+        width="0px"
+        height="0px"
       ></canvas>
     </div>
-    <!-- Canvas Basics end -->
 
-    <!-- Import Image end -->
+    <!-- Export Image end -->
+    <a
+      class="btn btn-success"
+      id="download"
+      download="MasterPiece.png"
+      href=""
+      onclick="download_img(this)"
+      >Download to MasterPiece.png</a
+    >
 
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -72,6 +76,7 @@
     <script src="./canvas/drawing-rectangle.js"></script>
     <script src="./canvas/drawing-triangle.js"></script>
     <script src="./canvas/spray.js"></script>
+    <script src="./controller/export_img.js"></script>
     <script type="text/javascript">
       let drawCanvas = document.getElementById("canvas-real");
 
