@@ -50,3 +50,12 @@ canvas {
   width: 100px;
   height:60px;
 }
+
+#spray {
+  background-color: rgba(147, 172, 33, 0.758);
+}
+
+#image-input {
+  background-color: burlywood;
+
+}
