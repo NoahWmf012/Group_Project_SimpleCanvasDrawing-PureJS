@@ -1,6 +1,4 @@
 const img_input = document.getElementById("image-input");
-var imageSrc = document.getElementById("canvas-real");
-// var ctx = canvas.getContext("2d");
 
 var img_height, img_width;
 
@@ -8,15 +6,14 @@ img_input.addEventListener("change", function () {
   const reader = new FileReader();
   reader.addEventListener("load", () => {
     const uploaded_image = reader.result;
-    imageSrc.style.backgroundImage = `url(${uploaded_image})`;
-    //canvas.style.backgroundImage = `url(${uploaded_image})`;
 
     var img = new Image();
 
     img.onload = function () {
       img_height = img.height;
       img_width = img.width;
-      // ctx.drawImage(img);
+      drawImageActualSize();
+      contextReal.drawImage(img, 0, 0);
     };
     img.src = uploaded_image;
   });
@@ -24,7 +21,7 @@ img_input.addEventListener("change", function () {
 });
 
 //redraw canvas size
-$("#btn-redraw").on("click", function () {
+function drawImageActualSize() {
   if (img_width == null || img_height == null) {
     alert("Please choose a photo first");
     return;
@@ -33,4 +30,4 @@ $("#btn-redraw").on("click", function () {
   $("#canvas-real").prop("height", img_height);
   $("#canvas-draft").prop("width", img_width);
   $("#canvas-draft").prop("height", img_height);
-});
+};
