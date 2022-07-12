@@ -11,14 +11,9 @@ class Spray extends PaintFunction {
   }
 
   onMouseDown(coord, event) {
-<<<<<<< Updated upstream
-    this.contextReal.fillStyle = this.color;
-    // this.contextReal.lineJoin = "round";
-=======
     this.contextReal.strokeStyle = this.color;
     this.contextReal.fillStyle = this.color;
     this.contextReal.lineJoin = "round";
->>>>>>> Stashed changes
     this.points.push({x: coord[0], y: coord[1]})
     // this.contextReal.beginPath();
     // this.contextReal.moveTo(coord[0], coord[1]);
