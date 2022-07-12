@@ -11,8 +11,9 @@ class Spray extends PaintFunction {
   }
 
   onMouseDown(coord, event) {
+    this.contextReal.strokeStyle = this.color;
     this.contextReal.fillStyle = this.color;
-    // this.contextReal.lineJoin = "round";
+    this.contextReal.lineJoin = "round";
     this.points.push({x: coord[0], y: coord[1]})
     // this.contextReal.beginPath();
     // this.contextReal.moveTo(coord[0], coord[1]);
@@ -21,6 +22,7 @@ class Spray extends PaintFunction {
 }
 onDragging(coord, event) {
     // this.draw(coord[0], coord[1], );
+    this.contextReal.strokeStyle = this.color;
     this.points.push({x: coord[0], y: coord[1]})
     // this.points.map((object) => {
         for (let i=0; i < this.points.length; i+= 7) {
@@ -28,6 +30,8 @@ onDragging(coord, event) {
         this.contextReal.arc(this.points[i].x, this.points[i].y, this.getRandomInt(2,10), 0, Math.PI * 2)
         this.contextReal.arc(this.points[i].x + this.getRandomInt(-30,30), this.points[i].y + this.getRandomInt(-30, 30), this.getRandomInt(2,5), 0, Math.PI * 2)
         this.contextReal.fill()
+        this.contextReal.fillStyle = this.color;
+        
         }
     // })
   }
