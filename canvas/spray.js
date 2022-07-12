@@ -15,10 +15,6 @@ class Spray extends PaintFunction {
     this.contextReal.fillStyle = this.color;
     this.contextReal.lineJoin = "round";
     this.points.push({x: coord[0], y: coord[1]})
-    // this.contextReal.beginPath();
-    // this.contextReal.moveTo(coord[0], coord[1]);
-    // this.draw(coord[0], coord[1], userInputSize);
-    
 }
 onDragging(coord, event) {
     // this.draw(coord[0], coord[1], );

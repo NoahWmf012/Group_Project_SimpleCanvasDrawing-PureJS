@@ -9,17 +9,15 @@ let userInputSize = 6;
 
 $("#stroke-size").on('change',function(e) {
   userInputSize = e.target.value
-  console.log(userInputSize)
 });
 
 $("#color-picker").on('change',function(e) {
   // userInputSize = e.target.value
   colorPicked = e.target.value
+  console.log("colorPicked : " + colorPicked);
 });
 
 $('#clear').click(function() {
-  console.log('clear')
-
   contextReal.clearRect(0, 0, canvasReal.width, canvasReal.height);
 });
 

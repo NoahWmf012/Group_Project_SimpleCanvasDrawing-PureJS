@@ -1,10 +1,3 @@
-
-
-// $("#stroke-size").on('change',function(e) {
-//   userInputSize = e.target.value
-//   console.log(userInputSize)
-// });
-
 class DrawingLine extends PaintFunction {
   constructor(contextReal, strokeSize) {
     super();

@@ -1,18 +1,15 @@
 class DrawingTriangle extends PaintFunction {
     constructor(contextReal, contextDraft) {
-      console.log('hi triangle')
       super();
       this.contextReal = contextReal;
       this.contextDraft = contextDraft;
     }
     onMouseDown(coord, event) {
-      console.log("mouse down", coord);
       this.contextReal.fillStyle = "red";
       this.origX = coord[0];
       this.origY = coord[1];
     }
     onDragging(coord, event) {
-      console.log("drag coord", coord);
       this.contextDraft.fillStyle = "red";
       this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
       this.contextDraft.beginPath();
@@ -24,7 +21,6 @@ class DrawingTriangle extends PaintFunction {
       this.contextDraft.closePath();
       
       this.contextDraft.stroke();
-      console.log("triangle", this.contextDraft);
     }
     onMouseMove() {}
     onMouseUp(coord) {
@@ -39,7 +35,6 @@ class DrawingTriangle extends PaintFunction {
       this.contextReal.closePath();
       this.contextReal.stroke();
       this.contextReal.fill();
-      console.log("circle real", this.contextReal);
     }
     onMouseLeave() {}
     onMouseEnter() {}
