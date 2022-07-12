@@ -20,11 +20,12 @@
     <button class="btn btn-primary" id="drawing-rectangle">
       Drawing Rectangle
     </button>
-    <button class="btn btn-info" id="drawing-triangle">Triangle</button>
+    <button class="btn btn" id="drawing-triangle">Triangle</button>
     <button class="btn btn-warning" id="drawing-circle">Drawing Circle</button>
     <button class="btn btn-success" id="drawing-line">Drawing Line</button>
     <button class="btn btn-secondary" id="undo">undo</button>
     <button class="btn btn-info" id="clear">clear</button>
+    <button class="btn btn" id="spray">Spray</button>
 
     <input type="color" id="color-picker" value="" />
     <input type="range" min="1" max="30" value="6" id="stroke-size" />
@@ -70,6 +71,7 @@
     <script src="./canvas/drawing-line.js"></script>
     <script src="./canvas/drawing-rectangle.js"></script>
     <script src="./canvas/drawing-triangle.js"></script>
+    <script src="./canvas/spray.js"></script>
     <script type="text/javascript">
       let drawCanvas = document.getElementById("canvas-real");
 
@@ -86,6 +88,10 @@
       $("#drawing-triangle").click(function () {
         console.log("hi");
         currentFunction = new DrawingTriangle(contextReal, contextDraft);
+      $("#spray").click(function () {
+        console.log('hi')
+        currentFunction = new DrawingTriangle(contextReal, contextDraft);
+      });
       });
     </script>
   </body>
