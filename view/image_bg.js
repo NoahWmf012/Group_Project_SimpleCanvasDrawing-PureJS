@@ -1,25 +1,25 @@
 const img_input = document.getElementById("image-input");
+var imageSrc = document.getElementById("canvas-real");
+// var ctx = canvas.getContext("2d");
+
 var img_height, img_width;
 
 img_input.addEventListener("change", function () {
   const reader = new FileReader();
   reader.addEventListener("load", () => {
     const uploaded_image = reader.result;
-    var imageSrc = document.getElementById("canvas-real");
     imageSrc.style.backgroundImage = `url(${uploaded_image})`;
+    //canvas.style.backgroundImage = `url(${uploaded_image})`;
 
     var img = new Image();
 
     img.onload = function () {
       img_height = img.height;
       img_width = img.width;
+      // ctx.drawImage(img);
     };
     img.src = uploaded_image;
   });
-  $("#canvas-real").prop("width", img_width);
-  $("#canvas-real").prop("height", img_height);
-  $("#canvas-draft").prop("width", img_width);
-  $("#canvas-draft").prop("height", img_height);
   reader.readAsDataURL(this.files[0]);
 });
 
