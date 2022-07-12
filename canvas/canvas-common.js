@@ -4,7 +4,13 @@ let canvasDraft = document.getElementById("canvas-draft");
 let contextDraft = canvasDraft.getContext("2d");
 let currentFunction;
 let dragging = false;
-let colorPicked 
+let colorPicked;
+let userInputSize = 6;
+
+$("#stroke-size").on('change',function(e) {
+  userInputSize = e.target.value
+  console.log(userInputSize)
+});
 
 $("#color-picker").on('change',function(e) {
   // userInputSize = e.target.value

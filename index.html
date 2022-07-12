@@ -40,11 +40,12 @@
 
     <div id="container">
       <canvas class="canvas" id="canvas-real" width="0px" height="0px"></canvas>
+
       <canvas
         class="canvas"
         id="canvas-draft"
-        width="0px"
-        height="0px"
+        width="500px"
+        height="600px"
       ></canvas>
     </div>
 
@@ -91,10 +92,10 @@
       $("#drawing-triangle").click(function () {
         console.log("hi");
         currentFunction = new DrawingTriangle(contextReal, contextDraft);
-        $("#spray").click(function () {
-          console.log("hi");
-          currentFunction = new DrawingTriangle(contextReal, contextDraft);
-        });
+      });
+      $("#spray").click(function () {
+        console.log("hi");
+        currentFunction = new Spray(contextReal, contextDraft);
       });
     </script>
   </body>
