@@ -1,7 +1,7 @@
-body {
-  /* background-color: black; */
-  /* color: white; */
-}
+/* body {
+  background-color: black;
+  color: white;
+} */
 #display-image{
     width: 375px;
     height: 211px;
@@ -49,4 +49,13 @@ canvas {
   padding: 1rem;
   width: 100px;
   height:60px;
+}
+
+#spray {
+  background-color: rgba(147, 172, 33, 0.758);
+}
+
+#image-input {
+  background-color: burlywood;
+
 }

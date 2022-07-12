@@ -1,4 +1,3 @@
-
 class DrawingLine extends PaintFunction {
   constructor(contextReal, strokeSize) {
     super();

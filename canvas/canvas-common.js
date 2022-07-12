@@ -4,16 +4,20 @@ let canvasDraft = document.getElementById("canvas-draft");
 let contextDraft = canvasDraft.getContext("2d");
 let currentFunction;
 let dragging = false;
-let colorPicked 
+let colorPicked;
+let userInputSize = 6;
+
+$("#stroke-size").on('change',function(e) {
+  userInputSize = e.target.value
+});
 
 $("#color-picker").on('change',function(e) {
   // userInputSize = e.target.value
   colorPicked = e.target.value
+  console.log("colorPicked : " + colorPicked);
 });
 
 $('#clear').click(function() {
-  console.log('clear')
-
   contextReal.clearRect(0, 0, canvasReal.width, canvasReal.height);
 });
 
