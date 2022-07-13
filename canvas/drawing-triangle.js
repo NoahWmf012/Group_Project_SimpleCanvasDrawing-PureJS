@@ -1,3 +1,5 @@
+
+
 class DrawingTriangle extends PaintFunction {
     constructor(contextReal, contextDraft) {
       console.log('hi triangle')
@@ -6,12 +8,12 @@ class DrawingTriangle extends PaintFunction {
       this.contextDraft = contextDraft;
     }
     onMouseDown(coord, event) {
-      this.contextReal.fillStyle = "red";
+      this.contextReal.fillStyle = this.color;
       this.origX = coord[0];
       this.origY = coord[1];
     }
     onDragging(coord, event) {
-      this.contextDraft.fillStyle = "red";
+      this.contextDraft.fillStyle = this.color;
       this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
       this.contextDraft.beginPath();
       this.contextDraft.lineWidth = 5;
