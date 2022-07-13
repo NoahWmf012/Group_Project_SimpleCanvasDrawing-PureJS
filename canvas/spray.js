@@ -1,5 +1,10 @@
 // let userInputSize = 6;
-
+let userColor
+$("#color-picker").on('change',function(e) {
+    // userInputSize = e.target.value
+    userColor = e.target.value
+    console.log("colorPicked : " + userColor);
+  });
 
 class Spray extends PaintFunction {
   constructor(contextReal, strokeSize) {
@@ -11,14 +16,14 @@ class Spray extends PaintFunction {
   }
 
   onMouseDown(coord, event) {
-    this.contextReal.strokeStyle = this.color;
+    this.contextReal.strokeStyle = userColor;
     this.contextReal.fillStyle = this.color;
     this.contextReal.lineJoin = "round";
     this.points.push({x: coord[0], y: coord[1]})
 }
 onDragging(coord, event) {
     // this.draw(coord[0], coord[1], );
-    this.contextReal.strokeStyle = this.color;
+    this.contextReal.strokeStyle = userColor;
     this.points.push({x: coord[0], y: coord[1]})
     // this.points.map((object) => {
         for (let i=0; i < this.points.length; i+= 7) {
