@@ -9,7 +9,7 @@ $("#color-picker").on('change',function(e) {
 class DrawingLine extends PaintFunction {
   constructor(contextReal, strokeSize) {
     super();
-    console.log(this.color)
+    // console.log(this.color)
     this.contextReal = contextReal;
     this.strokeSize = strokeSize;
     this.step = -1
