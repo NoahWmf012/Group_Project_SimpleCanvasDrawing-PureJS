@@ -27,6 +27,7 @@ $("#clear").click(function () {
 });
 
 $("#btn_undo").click(function () {
+  contextReal.clearRect(0, 0, canvasReal.width, canvasReal.height);
   currentStep -= 1;
   currentImg.pop();
   let canvasPic = new Image();
