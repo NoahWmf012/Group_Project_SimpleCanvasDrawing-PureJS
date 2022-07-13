@@ -24,7 +24,7 @@ onDragging(coord, event) {
         this.contextReal.arc(this.points[i].x, this.points[i].y, this.getRandomInt(2,10), 0, Math.PI * 2)
         this.contextReal.arc(this.points[i].x + this.getRandomInt(-30,30), this.points[i].y + this.getRandomInt(-30, 30), this.getRandomInt(2,5), 0, Math.PI * 2)
         this.contextReal.fill()
-        this.contextReal.fillStyle = this.color;
+        this.contextReal.fillStyle = activeColor();
         
         }
     // })
