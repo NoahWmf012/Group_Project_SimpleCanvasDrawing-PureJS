@@ -8,12 +8,12 @@ class DrawingTriangle extends PaintFunction {
       this.contextDraft = contextDraft;
     }
     onMouseDown(coord, event) {
-      this.contextReal.fillStyle = this.color;
+      this.contextReal.fillStyle = activeColor();
       this.origX = coord[0];
       this.origY = coord[1];
     }
     onDragging(coord, event) {
-      this.contextDraft.fillStyle = this.color;
+      this.contextDraft.fillStyle = activeColor();
       this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
       this.contextDraft.beginPath();
       this.contextDraft.lineWidth = 5;
@@ -21,13 +21,12 @@ class DrawingTriangle extends PaintFunction {
       this.contextDraft.moveTo(this.origX, this.origY);
       this.contextDraft.lineTo(coord[0], coord[1]);
       this.contextDraft.lineTo(this.origX * 2 - coord[0], coord[1]);
-      this.contextDraft.closePath();
-      
+      this.contextDraft.closePath();      
       this.contextDraft.stroke();
     }
     onMouseMove() {}
     onMouseUp(coord) {
-      this.contextReal.fillStyle = this.color;
+      this.contextReal.fillStyle = activeColor();
       this.contextReal.lineWidth = 5;
       this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
       this.contextReal.beginPath();
