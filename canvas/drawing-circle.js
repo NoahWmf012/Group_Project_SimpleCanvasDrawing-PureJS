@@ -33,6 +33,7 @@ class DrawingCircle extends PaintFunction {
     // );
     this.contextDraft.arc(this.origX, this.origY, this.radius, 0, 2 * Math.PI);
     this.contextDraft.stroke();
+    console.log("circle", this.contextDraft);
   }
   onMouseMove() {}
   onMouseUp(coord) {

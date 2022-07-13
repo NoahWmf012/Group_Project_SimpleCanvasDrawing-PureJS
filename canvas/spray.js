@@ -1,5 +1,4 @@
 
-
 class Spray extends PaintFunction {
   constructor(contextReal, strokeSize) {
     super();

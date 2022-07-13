@@ -1,5 +1,8 @@
+
+
 class DrawingTriangle extends PaintFunction {
     constructor(contextReal, contextDraft) {
+      console.log('hi triangle')
       super();
       this.contextReal = contextReal;
       this.contextDraft = contextDraft;
