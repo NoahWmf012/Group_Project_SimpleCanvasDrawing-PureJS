@@ -65,6 +65,10 @@ $("#canvas-draft").mouseenter(function (e) {
   }
 });
 
+function activeColor() {
+  return $("#color-picker").val()
+}
+
 class PaintFunction {
   constructor() {
     this.color = colorPicked

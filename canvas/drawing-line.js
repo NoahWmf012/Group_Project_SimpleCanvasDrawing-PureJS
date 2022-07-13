@@ -1,11 +1,3 @@
-let userColor
-$("#color-picker").on('change',function(e) {
-    // userInputSize = e.target.value
-    userColor = e.target.value
-    console.log("colorPicked : " + userColor);
-  });
-
-
 class DrawingLine extends PaintFunction {
   constructor(contextReal, strokeSize) {
     super();
@@ -15,10 +7,11 @@ class DrawingLine extends PaintFunction {
     this.step = -1
     this.lineList = []
   }
-
+  
   onMouseDown(coord) {
+    activeColor()
     console.log("line", coord)
-    this.contextReal.strokeStyle = userColor;
+    this.contextReal.strokeStyle = activeColor();
     this.contextReal.lineJoin = "round";
     this.contextReal.beginPath();
     this.contextReal.moveTo(coord[0], coord[1]);
