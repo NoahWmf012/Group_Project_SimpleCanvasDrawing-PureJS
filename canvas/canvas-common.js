@@ -17,7 +17,6 @@ $("#stroke-size").on("change", function (e) {
 });
 
 $("#color-picker").on("change", function (e) {
-  // userInputSize = e.target.value
   colorPicked = e.target.value;
   console.log("colorPicked : " + colorPicked);
 });
