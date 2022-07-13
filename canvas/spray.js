@@ -1,10 +1,10 @@
-// let userInputSize = 6;
-let userColor
-$("#color-picker").on('change',function(e) {
-    // userInputSize = e.target.value
-    userColor = e.target.value
-    console.log("colorPicked : " + userColor);
-  });
+// // let userInputSize = 6;
+// let userColor
+// $("#color-picker").on('change',function(e) {
+//     // userInputSize = e.target.value
+//     userColor = e.target.value
+//     console.log("colorPicked : " + userColor);
+//   });
 
 class Spray extends PaintFunction {
   constructor(contextReal, strokeSize) {
