@@ -10,6 +10,13 @@
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>Canvas Project #2</title>
   </head>
@@ -55,7 +62,17 @@
       id="image-input"
       accept="image/jpeg, image/png, image/jpg"
     />
-    <button class="btn btn-info" id="btn-redraw">Click Here to Start!</button>
+    <div class="container drag-container">
+      <h3>Upload Your Image To Start!</h3>
+      <div class="drag-area">
+        <span class="header">Drag & Drop</span>
+        <span class="header">or <span class="button">Browse</span></span>
+        <span class="support">Supports: JPG, JPEG, PNG</span>
+      </div>
+    </div>
+    <button class="btn" id="btn-redraw">
+      <input width="68" type="image" src="./img/btn-redraw.png" onMouseOver="this.src='./img/btn-redraw_ani.gif'" onMouseOut="this.src='./img/btn-redraw.png'">
+    </button>
 
     <div id="container">
       <canvas class="canvas" id="canvas-real" width="500px" height="500px"></canvas>
