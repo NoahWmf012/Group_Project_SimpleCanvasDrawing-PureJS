@@ -23,15 +23,16 @@
   <body>
     <!-- Canvas Basics by Alex -->
     <h1 class="text-center">Canvas Project</h1>
-
-    <button class="btn btn-primary" id="drawing-rectangle">
+    
+  <div class="d-flex flex-row justify-content-center align-items-center">
+    <button class="btn btn" id="drawing-rectangle">
       <img height="40" width="40" src="./icons/rectangle-svgrepo-com.svg">
     </button>
     <button class="btn btn" id="drawing-triangle">
       <img height="40" width="40" src="./icons/plain-triangle-svgrepo-com.svg">
     </button>
-    <button class="btn btn-warning" id="drawing-circle">
-      <img height="40" width="40" src="./icons/circle-svgrepo-com.svg">
+    <button class="btn btn" id="drawing-circle">
+      <img src="./icons/circle-svgrepo-com.svg">
     </button>
     <button class="btn btn-success" id="drawing-line">
       <img height="40" width="40" src="icons/pen-svgrepo-com.svg">
@@ -45,16 +46,15 @@
     <button class="btn btn" id="spray">
       <img height="40" width="40" src="./icons/spray-svgrepo-com.svg">
     </button>
-
-    
+    <div class="d-flex flex-column justify-content-center align-items-center">
+      <input type="color"width="40" height="40" id="color-picker" value="" />
+      <p id="pick-color">Pick Your Color</p>
     </div>
-    <div id="container-color-stroke">
-      <input type="color" id="color-picker" value="" />
-      <p class="color-stroke">Pick Your Color</p>
+    <div class="d-flex flex-column justify-content-center align-items-center">
       <input type="range" min="1" max="30" value="6" id="stroke-size" />
-      <p class="color-stroke">Pen Size</p>
+      <p id="pen-size">Pen Size</p>
     </div>
-
+  </div>
 
     <!-- Import Image by Chris -->
     <input
@@ -113,6 +113,7 @@
     <script src="./canvas/drawing-triangle.js"></script>
     <script src="./canvas/spray.js"></script>
     <script src="./controller/export_img.js"></script>
+    <script src="./canvas/increase-size.js"></script>
     <script type="text/javascript">
       let drawCanvas = document.getElementById("canvas-real");
 
