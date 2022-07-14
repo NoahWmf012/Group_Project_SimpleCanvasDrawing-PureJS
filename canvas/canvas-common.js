@@ -2,23 +2,39 @@ let canvasReal = document.getElementById("canvas-real");
 let contextReal = canvasReal.getContext("2d");
 let canvasDraft = document.getElementById("canvas-draft");
 let contextDraft = canvasDraft.getContext("2d");
+var can = document.getElementsByTagName("canvas");
 let currentFunction;
 let dragging = false;
 let colorPicked;
 let userInputSize = 6;
 
-$("#stroke-size").on('change',function(e) {
-  userInputSize = e.target.value
+//save the current Img for undo
+let currentStep = -1;
+let currentImg = [];
+
+$("#stroke-size").on("change", function (e) {
+  userInputSize = e.target.value;
 });
 
-$("#color-picker").on('change',function(e) {
-  // userInputSize = e.target.value
-  colorPicked = e.target.value
+$("#color-picker").on("change", function (e) {
+  colorPicked = e.target.value;
   console.log("colorPicked : " + colorPicked);
 });
 
-$('#clear').click(function() {
+$("#clear").click(function () {
   contextReal.clearRect(0, 0, canvasReal.width, canvasReal.height);
+});
+
+$("#btn_undo").click(function () {
+  contextReal.clearRect(0, 0, canvasReal.width, canvasReal.height);
+  currentStep -= 1;
+  currentImg.pop();
+  let canvasPic = new Image();
+  canvasPic.src = currentImg[currentStep];
+  canvasPic.onload = function () {
+    console.log("canvas", canvasPic);
+    contextReal.drawImage(canvasPic, 0, 0);
+  };
 });
 
 $("#canvas-draft").mousedown(function (e) {
@@ -34,7 +50,7 @@ $("#canvas-draft").mousemove(function (e) {
   if (dragging) {
     currentFunction.onDragging([mouseX, mouseY], e);
   }
-  if(currentFunction) {
+  if (currentFunction) {
     currentFunction.onMouseMove([mouseX, mouseY], e);
   }
 });
@@ -43,9 +59,14 @@ $("#canvas-draft").mouseup(function (e) {
   dragging = false;
   let mouseX = e.offsetX;
   let mouseY = e.offsetY;
-  if(currentFunction) {
+  if (currentFunction) {
     currentFunction.onMouseUp([mouseX, mouseY], e);
   }
+
+  //for undo function
+  currentStep++;
+  currentImg.push(can[0].toDataURL());
+  console.log("currentStep : " + currentStep);
 });
 
 $("#canvas-draft").mouseleave(function (e) {
@@ -71,7 +92,7 @@ function activeColor() {
 
 class PaintFunction {
   constructor() {
-    this.color = colorPicked
+    this.color = colorPicked;
   }
   onMouseDown() {}
   onDragging() {}
