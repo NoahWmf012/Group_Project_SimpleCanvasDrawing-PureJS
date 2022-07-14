@@ -13,15 +13,17 @@
   border: 2px solid black;
 }
 canvas {
-  position: absolute;
+  position:absolute;
+  margin-top:180px;
+  left:200px;
+
   /* background-color: rgb(197, 193, 193); */
 }
 
-#container {
+/* #container {
   margin-top: 5rem;
   display: flex;
   justify-content: center;
-}
 } */
 
 .tools {
