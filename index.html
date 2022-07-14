@@ -1,110 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="style.css" />
     <title>Canvas Project #2</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <!-- Canvas Basics by Alex -->
-    <h1 class="text-center">Canvas Project</h1>
+    <h1 class="animate__animated text-center" id="title">Canvas Project</h1>
 
-    <button class="btn btn-primary" id="drawing-rectangle">
-      <img height="40" width="40" src="./icons/rectangle-svgrepo-com.svg">
-    </button>
-    <button class="btn btn" id="drawing-triangle">
-      <img height="40" width="40" src="./icons/plain-triangle-svgrepo-com.svg">
-    </button>
-    <button class="btn btn-warning" id="drawing-circle">
-      <img height="40" width="40" src="./icons/circle-svgrepo-com.svg">
-    </button>
-    <button class="btn btn-success" id="drawing-line">
-      <img height="40" width="40" src="icons/pen-svgrepo-com.svg">
-    </button>
-    <button class="btn btn-secondary" id="btn_undo">
-      <img height="40" width="40" src="./icons/return-svgrepo-com.svg">
-    </button>
-    <button class="btn btn-info" id="clear">
-      <img height="40" width="40" src="./icons/clear-format-svgrepo-com.svg">
-    </button>
-    <button class="btn btn" id="spray">
-      <img height="40" width="40" src="./icons/spray-svgrepo-com.svg">
-    </button>
+    <section class="section-1">
 
-    
-    </div>
-    <div id="container-color-stroke">
-      <input type="color" id="color-picker" value="" />
-      <p class="color-stroke">Pick Your Color</p>
-      <input type="range" min="1" max="30" value="6" id="stroke-size" />
-      <p class="color-stroke">Pen Size</p>
-    </div>
+        <img class="sky-img" src="https://images.wallpaperscraft.com/image/single/sky_sunset_birds_114733_300x300.jpg"
+            alt="sky">
 
+        <!-- Import Image by Chris -->
+        <div class="container drag-container">
+            <h3>Upload Your Image To Start!</h3>
+            <div class="drag-area" style="width: 100%; height: 100%;">
+                <span class="header">Drag & Drop</span>
+                <span class="header">or <span class="btn-browse"
+                        style="color: #1683ff; cursor: pointer;">Browse</span></span>
+                <input type="file" id="image-input" accept="image/jpeg, image/png, image/jpg" hidden>
+                <span class="support">Supports: JPG, JPEG, PNG</span>
+            </div>
+        </div>
 
-    <!-- Import Image by Chris -->
-    <input
-      type="file"
-      id="image-input"
-      accept="image/jpeg, image/png, image/jpg"
-    />
-    <div class="container drag-container">
-      <h3>Upload Your Image To Start!</h3>
-      <div class="drag-area">
-        <span class="header">Drag & Drop</span>
-        <span class="header">or <span class="button">Browse</span></span>
-        <span class="support">Supports: JPG, JPEG, PNG</span>
-      </div>
-    </div>
-    <button class="btn" id="btn-redraw">
+    </section>
+    <!-- <button class="btn" id="btn-redraw">
       <input width="68" type="image" src="./img/btn-redraw.png" onMouseOver="this.src='./img/btn-redraw_ani.gif'" onMouseOut="this.src='./img/btn-redraw.png'">
-    </button>
+    </button> -->
 
-    <div id="container">
-      <canvas class="canvas" id="canvas-real" width="500px" height="500px"></canvas>
+    <section class="section-2">
+        <div class="tools">
+            <button class="btn btn-primary" id="drawing-rectangle">
+                <img height="40" width="40" src="./icons/rectangle-svgrepo-com.svg">
+            </button>
+            <button class="btn btn" id="drawing-triangle">
+                <img height="40" width="40" src="./icons/plain-triangle-svgrepo-com.svg">
+            </button>
+            <button class="btn btn-warning" id="drawing-circle">
+                <img height="40" width="40" src="./icons/circle-svgrepo-com.svg">
+            </button>
+            <button class="btn btn-success" id="drawing-line">
+                <img height="40" width="40" src="icons/pen-svgrepo-com.svg">
+            </button>
+            <button class="btn btn-secondary" id="btn_undo">
+                <img height="40" width="40" src="./icons/return-svgrepo-com.svg">
+            </button>
+            <button class="btn btn-info" id="clear">
+                <img height="40" width="40" src="./icons/clear-format-svgrepo-com.svg">
+            </button>
+            <button class="btn btn" id="spray">
+                <img height="40" width="40" src="./icons/spray-svgrepo-com.svg">
+            </button>
 
-      <canvas
-        class="canvas"
-        id="canvas-draft"
-        width="500px"
-        height="500px"
-      ></canvas>
-    </div>
 
-    <!-- Export Image end -->
-    <a
-      class="btn btn-success"
-      id="download"
-      download="MasterPiece.png"
-      href=""
-      onclick="download_img(this)"
-      >Download to MasterPiece.png</a
-    >
+            <div id="container-color-stroke">
+                <input type="color" id="color-picker" value="" />
+                <p class="color-stroke">Pick Your Color</p>
+                <input type="range" min="1" max="30" value="6" id="stroke-size" />
+                <p class="color-stroke">Pen Size</p>
+            </div>
+        </div>
 
-    <script
-      src="https://code.jquery.com/jquery-3.6.0.min.js"
-      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-      crossorigin="anonymous"
-    ></script>
+        <div id="container">
+
+            <canvas class="canvas" id="canvas-real" width="500px" height="500px"></canvas>
+
+            <canvas class="canvas" id="canvas-draft" width="500px" height="500px"></canvas>
+        </div>
+
+        <!-- Export Image end -->
+        <a class="btn btn-success" id="download" download="MasterPiece.png" href=""
+            onclick="download_img(this)">Download to
+            MasterPiece.png</a>
+
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
     <script src="./view/image_bg.js"></script>
     <script src="./canvas/canvas-common.js"></script>
     <script src="./canvas/drawing-circle.js"></script>
@@ -114,23 +102,24 @@
     <script src="./canvas/spray.js"></script>
     <script src="./controller/export_img.js"></script>
     <script type="text/javascript">
-      let drawCanvas = document.getElementById("canvas-real");
+        let drawCanvas = document.getElementById("canvas-real");
 
-      $("#drawing-rectangle").click(function () {
-        currentFunction = new DrawingRectangle(contextReal, contextDraft);
-      });
-      $("#drawing-line").click(function () {
-        currentFunction = new DrawingLine(contextReal);
-      });
-      $("#drawing-circle").click(function () {
-        currentFunction = new DrawingCircle(contextReal, contextDraft);
-      });
-      $("#drawing-triangle").click(function () {
-        currentFunction = new DrawingTriangle(contextReal, contextDraft);
-      });
-      $("#spray").click(function () {
-        currentFunction = new Spray(contextReal, contextDraft);
-      });
+        $("#drawing-rectangle").click(function () {
+            currentFunction = new DrawingRectangle(contextReal, contextDraft);
+        });
+        $("#drawing-line").click(function () {
+            currentFunction = new DrawingLine(contextReal);
+        });
+        $("#drawing-circle").click(function () {
+            currentFunction = new DrawingCircle(contextReal, contextDraft);
+        });
+        $("#drawing-triangle").click(function () {
+            currentFunction = new DrawingTriangle(contextReal, contextDraft);
+        });
+        $("#spray").click(function () {
+            currentFunction = new Spray(contextReal, contextDraft);
+        });
     </script>
-  </body>
+</body>
+
 </html>
