@@ -43,9 +43,10 @@ dragArea.addEventListener("drop", (e) => {
 
       //section_1 dissapear & section_2 appear
       //animation
-      section_1.classList.add("animate__backOutUp");
-      // section_1.style.display = "none";
-      // section_2.style.display = "block";
+      section_1.classList.add("animate__animated", "animate__backOutUp");
+      setTimeout(function () {
+        changeSection_2();
+      }, 1500);
 
       img.onload = function () {
         img_height = img.height;
@@ -92,4 +93,10 @@ function drawImageActualSize() {
   $("#canvas-real").prop("height", img_height);
   $("#canvas-draft").prop("width", img_width);
   $("#canvas-draft").prop("height", img_height);
+}
+
+function changeSection_2() {
+  section_2.classList.add("animate__animated", "animate__bounceInLeft");
+  section_1.style.display = "none";
+  section_2.style.display = "block";
 }

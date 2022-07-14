@@ -18,14 +18,14 @@
 <body>
     <!-- Canvas Basics by Alex -->
     <h1 class="text-center">Canvas Project</h1>
-    
-      
-  
+
+
+
 
     <section class="section-1">
 
-        <img class="sky-img" src="https://images.wallpaperscraft.com/image/single/sky_sunset_birds_114733_300x300.jpg"
-            alt="sky">
+        <img class="sky-img" id="sky-img"
+            src="https://images.wallpaperscraft.com/image/single/sky_sunset_birds_114733_300x300.jpg" alt="sky">
 
         <!-- Import Image by Chris -->
         <div class="container drag-container">
@@ -43,49 +43,49 @@
 
     <section class="section-2">
         <div class="tools">
-          <div class="d-flex flex-row justify-content-center align-items-center">
-            <button class="btn btn" id="drawing-rectangle">
-              <img height="40" width="40" src="./icons/rectangle-svgrepo-com.svg">
-            </button>
-            <button class="btn btn" id="drawing-triangle">
-              <img height="40" width="40" src="./icons/plain-triangle-svgrepo-com.svg">
-            </button>
-            <button class="btn btn" id="drawing-circle">
-              <img src="./icons/circle-svgrepo-com.svg">
-            </button>
-            <button class="btn" id="drawing-line">
-              <img height="40" width="40" src="icons/pen-svgrepo-com.svg">
-            </button>
-            <button class="btn btn" id="btn_undo">
-              <img height="40" width="40" src="./icons/return-svgrepo-com.svg">
-            </button>
-            <button class="btn btn" id="clear">
-              <img height="40" width="40" src="./icons/clear-format-svgrepo-com.svg">
-            </button>
-            <button class="btn btn" id="spray">
-              <img height="40" width="40" src="./icons/spray-svgrepo-com (2).svg">
-            </button>
-            <div class="d-flex flex-column justify-content-center align-items-center">
-              <input type="color"width="40" height="40" id="color-picker" value="" />
-              <p id="pick-color">Pick Your Color</p>
+            <div class="d-flex flex-row justify-content-center align-items-center">
+                <button class="btn btn" id="drawing-rectangle">
+                    <img height="40" width="40" src="./icons/rectangle-svgrepo-com.svg">
+                </button>
+                <button class="btn btn" id="drawing-triangle">
+                    <img height="40" width="40" src="./icons/plain-triangle-svgrepo-com.svg">
+                </button>
+                <button class="btn btn" id="drawing-circle">
+                    <img src="./icons/circle-svgrepo-com.svg">
+                </button>
+                <button class="btn" id="drawing-line">
+                    <img height="40" width="40" src="icons/pen-svgrepo-com.svg">
+                </button>
+                <button class="btn btn" id="btn_undo">
+                    <img height="40" width="40" src="./icons/return-svgrepo-com.svg">
+                </button>
+                <button class="btn btn" id="clear">
+                    <img height="40" width="40" src="./icons/clear-format-svgrepo-com.svg">
+                </button>
+                <button class="btn btn" id="spray">
+                    <img height="40" width="40" src="./icons/spray-svgrepo-com (2).svg">
+                </button>
+                <div class="d-flex flex-column justify-content-center align-items-center">
+                    <input type="color" width="40" height="40" id="color-picker" value="" />
+                    <p id="pick-color">Pick Your Color</p>
+                </div>
+                <div class="d-flex flex-column justify-content-center align-items-center">
+                    <input type="range" min="1" max="30" value="6" id="stroke-size" />
+                    <p id="pen-size">Pen Size</p>
+                </div>
             </div>
-            <div class="d-flex flex-column justify-content-center align-items-center">
-              <input type="range" min="1" max="30" value="6" id="stroke-size" />
-              <p id="pen-size">Pen Size</p>
+
+            <div id="container">
+
+                <canvas class="canvas" id="canvas-real" width="500px" height="500px"></canvas>
+
+                <canvas class="canvas" id="canvas-draft" width="500px" height="500px"></canvas>
             </div>
-        </div>
 
-        <div id="container">
-
-            <canvas class="canvas" id="canvas-real" width="500px" height="500px"></canvas>
-
-            <canvas class="canvas" id="canvas-draft" width="500px" height="500px"></canvas>
-        </div>
-
-        <!-- Export Image end -->
-        <a class="btn btn-success" id="download" download="MasterPiece.png" href=""
-            onclick="download_img(this)">Download to
-            MasterPiece.png</a>
+            <!-- Export Image end -->
+            <a class="btn btn-success" id="download" download="MasterPiece.png" href=""
+                onclick="download_img(this)">Download to
+                MasterPiece.png</a>
 
     </section>
 
