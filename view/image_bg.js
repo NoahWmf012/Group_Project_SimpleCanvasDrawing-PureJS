@@ -46,7 +46,7 @@ dragArea.addEventListener("drop", (e) => {
       section_1.classList.add("animate__animated", "animate__backOutUp");
       setTimeout(function () {
         changeSection_2();
-      }, 1500);
+      }, 1200);
 
       img.onload = function () {
         img_height = img.height;

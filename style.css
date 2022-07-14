@@ -41,21 +41,19 @@ canvas {
   border: 2px solid white;
 }
 
-
 #color-picker {
-  position:relative;
-  top:20px;
-  height:70px;
-  width:130px;
+  position: relative;
+  top: 20px;
+  height: 70px;
+  width: 130px;
 }
-#pen-size{
+#pen-size {
   position: relative;
 }
-.special{
+.special {
   position: relative;
-  top:33px;
+  top: 33px;
 }
-
 
 #image-input {
   background-color: burlywood;
@@ -69,27 +67,25 @@ canvas {
   margin-top: 72px;
 }
 
-
-#pick-color{
+#pick-color {
   position: relative;
-  top:18px;
+  top: 18px;
 }
-
 
 #pen-size {
   display: flex;
   margin-top: 20px;
 }
-button{
-  margin:5px;
+button {
+  margin: 5px;
 }
-
 
 .drag-container {
   display: flex;
+  width: 400px;
+  height: 300px;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
   flex-direction: column;
   border-radius: 20px;
   background: #e0eafc;
@@ -98,7 +94,8 @@ button{
 }
 
 .drag-area {
-  height: 400px;
+  height: 100%;
+  width: 100%;
   border: 3px dashed #e0eafc;
   display: flex;
   flex-direction: column;
@@ -107,7 +104,6 @@ button{
   border-radius: 20px;
   margin: 10px auto;
 }
-
 
 button {
   border: solid;
@@ -118,10 +114,9 @@ button {
   cursor: pointer;
   outline: none;
   color: #fff;
-  background-color: #04AA6D;
+  background-color: #04aa6d;
   border: none;
   border-radius: 15px;
- 
 }
 
 button:hover {
@@ -150,9 +145,8 @@ button:active {
 .sky-img {
   display: block;
   margin: 0 auto;
+  width: 380px;
 }
-
-/* .section-2 {
+.section-2 {
   display: none;
-} */
-
+}
