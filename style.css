@@ -41,9 +41,6 @@ canvas {
   border: 2px solid white;
 }
 
-#drawing-triangle {
-  background-color: blueviolet;
-}
 
 #color-picker {
   position:relative;
@@ -58,9 +55,7 @@ canvas {
   position: relative;
   top:33px;
 }
-#spray {
-  background-color: rgba(147, 172, 33, 0.758);
-}
+
 
 #image-input {
   background-color: burlywood;
@@ -69,6 +64,10 @@ canvas {
 /* #feature-container {
   display: flex;
 } */
+
+#stroke-size {
+  margin-top: 72px;
+}
 
 
 #pick-color{
@@ -109,6 +108,34 @@ button{
   margin: 10px auto;
 }
 
+
+button {
+  border: solid;
+  border-width: 2px;
+  border-color: #000;
+  padding: 15px 25px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #04AA6D;
+  border: none;
+  border-radius: 15px;
+ 
+}
+
+button:hover {
+  border: solid;
+  border-color: #000;
+  border-width: 2px;
+}
+
+button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(8px);
+}
+
 .drag-area.active {
   border: 2px solid #1683ff;
 }
@@ -128,3 +155,4 @@ button{
 /* .section-2 {
   display: none;
 } */
+
