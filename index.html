@@ -18,17 +18,36 @@
     <h1 class="text-center">Canvas Project</h1>
 
     <button class="btn btn-primary" id="drawing-rectangle">
-      Drawing Rectangle
+      <img height="40" width="40" src="./icons/rectangle-svgrepo-com.svg">
     </button>
-    <button class="btn btn" id="drawing-triangle">Triangle</button>
-    <button class="btn btn-warning" id="drawing-circle">Drawing Circle</button>
-    <button class="btn btn-success" id="drawing-line">Drawing Line</button>
-    <button class="btn btn-secondary" id="btn_undo">undo</button>
-    <button class="btn btn-info" id="clear">clear</button>
-    <button class="btn btn" id="spray">Spray</button>
+    <button class="btn btn" id="drawing-triangle">
+      <img height="40" width="40" src="./icons/plain-triangle-svgrepo-com.svg">
+    </button>
+    <button class="btn btn-warning" id="drawing-circle">
+      <img height="40" width="40" src="./icons/circle-svgrepo-com.svg">
+    </button>
+    <button class="btn btn-success" id="drawing-line">
+      <img height="40" width="40" src="icons/pen-svgrepo-com.svg">
+    </button>
+    <button class="btn btn-secondary" id="btn_undo">
+      <img height="40" width="40" src="./icons/return-svgrepo-com.svg">
+    </button>
+    <button class="btn btn-info" id="clear">
+      <img height="40" width="40" src="./icons/clear-format-svgrepo-com.svg">
+    </button>
+    <button class="btn btn" id="spray">
+      <img height="40" width="40" src="./icons/spray-svgrepo-com.svg">
+    </button>
 
-    <input type="color" id="color-picker" value="" />
-    <input type="range" min="1" max="30" value="6" id="stroke-size" />
+    
+    </div>
+    <div id="container-color-stroke">
+      <input type="color" id="color-picker" value="" />
+      <p class="color-stroke">Pick Your Color</p>
+      <input type="range" min="1" max="30" value="6" id="stroke-size" />
+      <p class="color-stroke">Pen Size</p>
+    </div>
+
 
     <!-- Import Image by Chris -->
     <input

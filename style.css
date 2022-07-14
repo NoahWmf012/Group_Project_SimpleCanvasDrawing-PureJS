@@ -46,9 +46,9 @@ canvas {
 }
 
 #color-picker {
-  padding: 1rem;
+  
   width: 100px;
-  height:60px;
+  height:40px;
 }
 
 #spray {
@@ -58,4 +58,22 @@ canvas {
 #image-input {
   background-color: burlywood;
 
+}
+
+
+#container-color-stroke {
+  display: flex;
+  margin-top: 20px;
+}
+
+.color-stroke {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
+}
+
+#stroke-size {
+  margin-left: 20px;
 }
